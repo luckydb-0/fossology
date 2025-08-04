@@ -99,7 +99,11 @@ jobs:
             --author "${{ github.actor }}" \
             ${{ inputs.options }} \
             --spec-version "${{ inputs.cyclonedx-version }}"
-
+            
+      - name: Check files
+        working-directory: ${{ inputs.project-path }}
+        run: ls -l
+        
       - name: Upload generated SBOM
         uses: actions/upload-artifact@v4
         with:
