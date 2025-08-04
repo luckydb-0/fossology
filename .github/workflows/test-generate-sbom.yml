@@ -1,0 +1,11 @@
+# Test
+
+name: Call a reusable workflow
+
+on:
+  push
+  
+jobs:
+  call-workflow:
+    uses: ./.github/workflows/generate-sbom.yml
+
