@@ -100,7 +100,7 @@ jobs:
             ${{ inputs.options }} \
             --spec-version "${{ inputs.cyclonedx-version }}"
             
-      - name: Check files
+      - name: Check files generate
         working-directory: ${{ inputs.project-path }}
         run: ls -l
         
@@ -134,7 +134,11 @@ jobs:
           SERVICENOW_ELEMENT: ${{ inputs.service-element }}
         run: |
           python /app/src/sbom-helper/main.py --env -i "${{ inputs.project-path }}/${{ inputs.generate-output }}"
-
+      
+      - name: Check files update
+        working-directory: ${{ inputs.project-path }}
+        run: ls -l
+        
       - name: Upload updated SBOM
         uses: actions/upload-artifact@v4
         with:
