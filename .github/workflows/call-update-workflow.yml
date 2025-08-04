@@ -1,0 +1,16 @@
+name: Call Generate and Update SBOM workflow
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  call-sbom-generator:
+    uses: ./.github/workflows/generate-and-update-sbom.yml
+    with:
+      project-path: "src"
+      options: "--reproducible"
+      contact: "gianluca.de.bonis@example.com"
+      unit: "IT-CD-CC"
+      app-name: "MY APP"
+      service-element: "SERVICE NAME"
