@@ -136,7 +136,7 @@ jobs:
           python /app/src/sbom-helper/main.py --env -i "${{ inputs.project-path }}/${{ inputs.generate-output }}"
       
       - name: Check files update
-        working-directory: ${{ inputs.project-path }}
+        working-directory: ${{ inputs.project-path }}/output
         run: ls -l
         
       - name: Upload updated SBOM
