@@ -143,4 +143,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: updated-sbom
-          path: output/updated_${{ inputs.generate-output }}
+          path: ${{ inputs.project-path }}/output/updated_${{ inputs.generate-output }}
