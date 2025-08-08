@@ -7,5 +7,5 @@ on:
   
 jobs:
   call-workflow:
-    uses: ./.github/workflows/generate-sbom.yml
+    uses: luckydb-0/ospo-workflows/.github/workflows/generate-sbom.yml@0.1
 
