@@ -1,8 +1,7 @@
 name: Generate then Update SBOM
 
 on:
-  push:
-    branches: [ main ]
+  push
 
 jobs:
   generate:
